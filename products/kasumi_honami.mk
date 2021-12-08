@@ -7,13 +7,13 @@ $(call inherit-product, device/sony/honami/aosp_c6903.mk)
 $(call inherit-product, device/sony/rhine-common/platform2.mk)
 
 #Inherit Stuff from Vendor
-$(call inherit-product, vendor/aosip/config/common_full_phone.mk)
+$(call inherit-product, vendor/kasumi/config/common_full_phone.mk)
 
 # Dalvik/HWUI
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
 
-PRODUCT_NAME := aosip_honami
+PRODUCT_NAME := kasumi_honami
 PRODUCT_DEVICE := honami
 PRODUCT_MODEL := Xperia Z1
 PRODUCT_BRAND := Sony

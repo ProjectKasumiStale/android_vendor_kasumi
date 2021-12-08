@@ -1,5 +1,3 @@
-
-# Copyright (C) 2016 The CyanogenMod Project
 # Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,27 +11,28 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-# Inherit from the common Open Source product configuration
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+# Inherit device configuration
+$(call inherit-product, device/xiaomi/mido/full_mido.mk)
 
-# Inherit from hardware-specific part of the product configuration
-$(call inherit-product, device/xiaomi/armani/device.mk)
-$(call inherit-product-if-exists, vendor/xiaomi/armani/armani-vendor.mk)
+# Inherit some common stuff.
+$(call inherit-product, vendor/kasumi/config/common_full_phone.mk)
 
-# Inherit some common AOSiP stuff
-$(call inherit-product, vendor/aosip/config/common_full_phone.mk)
-
-# Device identifier. This must come after all inclusions.
-PRODUCT_DEVICE := armani
-PRODUCT_NAME := aosip_armani
+# Product info
+TARGET_VENDOR := Xiaomi
+PRODUCT_DEVICE := mido
+PRODUCT_NAME := kasumi_mido
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := HM 1S
+PRODUCT_MODEL := Redmi Note 4
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_BUILD_PROP_OVERRIDES += DEVICE_MAINTAINERS="Aniket Lamba"
 
+# Device maintainer
+PRODUCT_BUILD_PROP_OVERRIDES += DEVICE_MAINTAINERS="Kuba Schenk (aabuk)"
+
+# GSM Client ID
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
+# Build Fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=armani
+    BUILD_FINGERPRINT="xiaomi/mido/mido:7.0/NRD90M/7.2.9:user/release-keys" \
+    PRIVATE_BUILD_DESC="mido-user 7.0 NRD90M 7.2.9 release-keys"

@@ -1,5 +1,4 @@
 # Copyright (C) 2015 The CyanogenMod Project
-#           (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,15 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+$(call inherit-product, device/motorola/lux/full_lux.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common AOSiP stuff.
-$(call inherit-product, vendor/aosip/config/common_full_phone.mk)
-
-# for specific
-$(call inherit-product, device/motorola/potter/full_potter.mk)
-$(call inherit-product, vendor/motorola/potter/potter-vendor.mk)
-
+$(call inherit-product, vendor/kasumi/config/common_full_phone.mk)
 
 # Boot animation
 TARGET_SCREEN_WIDTH := 1080
@@ -29,10 +24,12 @@ TARGET_SCREEN_HEIGHT := 1920
 TARGET_BOOTANIMATION_HALF_RES := true
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := potter
-PRODUCT_NAME := aosip_potter
+PRODUCT_DEVICE := lux
+PRODUCT_NAME := kasumi_lux
 PRODUCT_BRAND := Motorola
-PRODUCT_MANUFACTURER := Lenovo
-PRODUCT_RELEASE_NAME := potter
+PRODUCT_MANUFACTURER := Motorola
+PRODUCT_RELEASE_NAME := lux
 
-PRODUCT_BUILD_PROP_OVERRIDES += DEVICE_MAINTAINERS="Vache Ounet (vache)"
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME="Moto X Play" \
+    DEVICE_MAINTAINERS="Nick van Bokhorst (GtrCraft)"

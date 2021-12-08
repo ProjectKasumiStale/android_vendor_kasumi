@@ -17,7 +17,7 @@
 $(call inherit-product, device/motorola/addison/full_addison.mk)
 
 # Inherit some common AOSiP stuff.
-$(call inherit-product, vendor/aosip/config/common_full_phone.mk)
+$(call inherit-product, vendor/kasumi/config/common_full_phone.mk)
 
 # Boot animation
 TARGET_SCREEN_WIDTH := 1080
@@ -25,7 +25,7 @@ TARGET_SCREEN_HEIGHT := 1920
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := addison
-PRODUCT_NAME := aosip_addison
+PRODUCT_NAME := kasumi_addison
 PRODUCT_BRAND := motorola
 PRODUCT_MANUFACTURER := motorola
 

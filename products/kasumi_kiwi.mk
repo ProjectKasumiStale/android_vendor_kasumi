@@ -19,14 +19,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from vendor
-$(call inherit-product, vendor/aosip/config/common_full_phone.mk)
+$(call inherit-product, vendor/kasumi/config/common_full_phone.mk)
 
 # Inherit from device tree
 $(call inherit-product, device/huawei/kiwi/device.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := kiwi
-PRODUCT_NAME := aosip_kiwi
+PRODUCT_NAME := kasumi_kiwi
 PRODUCT_BRAND := HONOR
 PRODUCT_MODEL := KIW-L24
 PRODUCT_MANUFACTURER := HUAWEI

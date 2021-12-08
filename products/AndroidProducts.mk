@@ -1,1 +1,1 @@
-PRODUCT_MAKEFILES := $(wildcard vendor/aosip/products/aosip_*.mk)
+PRODUCT_MAKEFILES := $(wildcard vendor/kasumi/products/kasumi_*.mk)

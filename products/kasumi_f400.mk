@@ -1,9 +1,9 @@
 $(call inherit-product, device/lge/f400/full_f400.mk)
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/aosip/config/common_full_phone.mk)
+$(call inherit-product, vendor/kasumi/config/common_full_phone.mk)
 
-PRODUCT_NAME := aosip_f400
+PRODUCT_NAME := kasumi_f400
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     DEVICE_MAINTAINERS="Adam Ovadia" \

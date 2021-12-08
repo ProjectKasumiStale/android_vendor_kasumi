@@ -1,4 +1,5 @@
-# Copyright (C) 2016 The CyanogenMod Project
+#
+# Copyright (C) 2017 The MoKee Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,34 +12,34 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
 # Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from bacon device
-$(call inherit-product, device/oneplus/bacon/bacon.mk)
+# Inherit from cheeseburger device
+$(call inherit-product, device/oneplus/cheeseburger/device.mk)
 
 # Inherit some common AOSiP stuff.
-$(call inherit-product, vendor/aosip/config/common_full_phone.mk)
+$(call inherit-product, vendor/kasumi/config/common_full_phone.mk)
 
-PRODUCT_NAME := aosip_bacon
-PRODUCT_DEVICE := bacon
+PRODUCT_NAME := kasumi_cheeseburger
+PRODUCT_DEVICE := cheeseburger
 PRODUCT_MANUFACTURER := OnePlus
-PRODUCT_MODEL := A0001
+PRODUCT_BRAND := OnePlus
+PRODUCT_MODEL := ONEPLUS A5000
 
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 
-PRODUCT_BRAND := oneplus
-TARGET_VENDOR := oneplus
-TARGET_VENDOR_PRODUCT_NAME := bacon
-TARGET_VENDOR_DEVICE_NAME := A0001
-PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=A0001 PRODUCT_NAME=bacon
+TARGET_VENDOR_PRODUCT_NAME := OnePlus5
+TARGET_VENDOR_DEVICE_NAME := OnePlus5
 
-## Use the latest approved GMS identifiers unless running a signed build
-ifneq ($(SIGN_BUILD),true)
+PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=OnePlus5 PRODUCT_NAME=OnePlus5
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT=oneplus/bacon/A0001:6.0.1/MHC19Q/ZNH2KAS1KN:user/release-keys \
-    PRIVATE_BUILD_DESC="bacon-user 6.0.1 MHC19Q ZNH2KAS1KN release-keys"
-endif
+    DEVICE_MAINTAINERS="DreamTeam" \
+    BUILD_FINGERPRINT=OnePlus/OnePlus5/OnePlus5:7.1.1/NMF26X/06241119:user/release-keys
 
-PRODUCT_BUILD_PROP_OVERRIDES += DEVICE_MAINTAINERS="Kaushik V (KV)"
+TARGET_VENDOR := oneplus
+

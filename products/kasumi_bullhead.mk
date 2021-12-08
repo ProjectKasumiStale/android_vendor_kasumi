@@ -2,7 +2,7 @@
 $(call inherit-product, device/lge/bullhead/aosp_bullhead.mk)
 
 # Inherit common product files.
-$(call inherit-product, vendor/aosip/config/common_full_phone.mk)
+$(call inherit-product, vendor/kasumi/config/common_full_phone.mk)
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
@@ -10,7 +10,7 @@ TARGET_SCREEN_WIDTH := 1080
 
 # Setup device specific product configuration.
 
-PRODUCT_NAME := aosip_bullhead
+PRODUCT_NAME := kasumi_bullhead
 PRODUCT_BRAND := google
 PRODUCT_DEVICE := bullhead
 PRODUCT_MODEL := Nexus 5X

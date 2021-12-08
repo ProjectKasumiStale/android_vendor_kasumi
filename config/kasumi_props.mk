@@ -33,9 +33,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # OTA Updates
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.ota.romname=AOSiP \
+    persist.ota.romname=Kasumi \
     persist.ota.version=$(shell date +%Y%m%d) \
-    persist.ota.manifest=https://raw.githubusercontent.com/AOSIP/ota/nougat-mr2/aosip_$(CUSTOM_BUILD).xml
+    persist.ota.manifest=https://dl.ayokaacr.tk/Season0/OTA/kasumi_$(CUSTOM_BUILD).xml
 
 # Set cache location
 ifeq ($(BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE),)

@@ -14,14 +14,14 @@
 # limitations under the License.
 
 # Versioning System
-PRODUCT_VERSION_MAJOR = 6
-PRODUCT_VERSION_MINOR = 3
+PRODUCT_VERSION_MAJOR = 0
+PRODUCT_VERSION_MINOR = 1
 
-AOSIP_BUILDTYPE ?= Derp
+KASUMI_BUILDTYPE ?= Backstage
 
-AOSIP_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(AOSIP_BUILDTYPE)-$(CUSTOM_BUILD)-$(shell date -u +%Y%m%d)
+KASUMI_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(KASUMI_BUILDTYPE)-$(CUSTOM_BUILD)-$(shell date -u +%Y%m%d)
 
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.aosip.version=$(AOSIP_VERSION) \
-  ro.aosip.device=$(CUSTOM_BUILD) \
-  ro.modversion=$(AOSIP_VERSION)
+  ro.kasumi.version=$(KASUMI_VERSION) \
+  ro.kasumi.device=$(CUSTOM_BUILD) \
+  ro.modversion=$(KASUMI_VERSION)

@@ -13,25 +13,25 @@
 # limitations under the License.
 
 # Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from onyx device
-$(call inherit-product, device/oneplus/onyx/device.mk)
+# Inherit from oneplus3 device
+$(call inherit-product, device/oneplus/oneplus3/device.mk)
 
 # Inherit some common AOSiP stuff.
-$(call inherit-product, vendor/aosip/config/common_full_phone.mk)
+$(call inherit-product, vendor/kasumi/config/common_full_phone.mk)
 
-# Call the proprietary setup
-$(call inherit-product-if-exists, vendor/oneplus/onyx/onyx-vendor.mk)
-
-PRODUCT_NAME := aosip_onyx
-PRODUCT_DEVICE := onyx
+PRODUCT_NAME := kasumi_oneplus3
+PRODUCT_DEVICE := oneplus3
 PRODUCT_MANUFACTURER := OnePlus
+PRODUCT_BRAND := OnePlus
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+DEVICE_MAINTAINERS="Josh Fox(XlxFoXxlX)" \
+BUILD_FINGERPRINT=OnePlus/OnePlus3/OnePlus3:7.1.1/NMF26F/07151600:user/release-keys \
+PRIVATE_BUILD_DESC="OnePlus3-user 7.1.1 NMF26F 74 dev-keys"
 
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 
-PRODUCT_BRAND := OnePlus
 TARGET_VENDOR := oneplus
-TARGET_VENDOR_PRODUCT_NAME := onyx
-
-PRODUCT_BUILD_PROP_OVERRIDES += DEVICE_MAINTAINERS="Saket Sawrav(I-m-mortal)"

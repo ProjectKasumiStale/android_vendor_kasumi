@@ -12,15 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include vendor/aosip/config/version.mk
+include vendor/kasumi/config/version.mk
 
-PRODUCT_BRAND ?= AOSiP
+PRODUCT_BRAND ?= Kasumi
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/aosip/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/aosip/prebuilt/common/bin/50-base.sh:system/addon.d/50-base.sh \
+    vendor/kasumi/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/kasumi/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/kasumi/prebuilt/common/bin/50-base.sh:system/addon.d/50-base.sh \
 
 # Bootanimation
 TARGET_BOOTANIMATION_720P := $(shell \
@@ -32,15 +32,15 @@ TARGET_BOOTANIMATION_720P := $(shell \
 
 ifeq ($(TARGET_BOOTANIMATION_720P), true)
 PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/media/bootanimation/720.zip:system/media/bootanimation.zip
+    vendor/kasumi/prebuilt/common/media/bootanimation/720.zip:system/media/bootanimation.zip
 else
 PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/media/bootanimation/1080.zip:system/media/bootanimation.zip
+    vendor/kasumi/prebuilt/common/media/bootanimation/1080.zip:system/media/bootanimation.zip
 endif
 
 DEVICE_PACKAGE_OVERLAYS += \
-    vendor/aosip/overlay/common \
-    vendor/aosip/overlay/dictionaries
+    vendor/kasumi/overlay/common \
+    vendor/kasumi/overlay/dictionaries
 
 # Custom packages
 PRODUCT_PACKAGES += \
@@ -97,19 +97,19 @@ PRODUCT_PACKAGES += \
 
 # Backup Services whitelist
 PRODUCT_COPY_FILES += \
-    vendor/aosip/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
+    vendor/kasumi/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
 
 # init.d support
 PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner
+    vendor/kasumi/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner
 
 # AOSiP-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/etc/init.local.rc:root/init.aosip.rc
+    vendor/kasumi/prebuilt/common/etc/init.local.rc:root/init.aosip.rc
 
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
+    vendor/kasumi/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -142,4 +142,4 @@ PRODUCT_PACKAGES += \
     charger_res_images
 
 # include definitions for SDCLANG
-include vendor/aosip/sdclang/sdclang.mk
+include vendor/kasumi/sdclang/sdclang.mk

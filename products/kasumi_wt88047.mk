@@ -12,24 +12,26 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, device/motorola/lux/full_lux.mk)
+# Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common AOSiP stuff.
-$(call inherit-product, vendor/aosip/config/common_full_phone.mk)
+$(call inherit-product, vendor/kasumi/config/common_full_phone.mk)
 
-# Boot animation
-TARGET_SCREEN_WIDTH := 1080
-TARGET_SCREEN_HEIGHT := 1920
-TARGET_BOOTANIMATION_HALF_RES := true
+# Inherit from wt88047 device
+$(call inherit-product, device/wingtech/wt88047/device.mk)
 
-## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := lux
-PRODUCT_NAME := aosip_lux
-PRODUCT_BRAND := Motorola
-PRODUCT_MANUFACTURER := Motorola
-PRODUCT_RELEASE_NAME := lux
+# Must define platform variant before including any common things
+TARGET_BOARD_PLATFORM_VARIANT := msm8916
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME="Moto X Play" \
-    DEVICE_MAINTAINERS="Nick van Bokhorst (GtrCraft)"
+# Device identifier. This must come after all inclusions
+BOARD_VENDOR := wingtech
+PRODUCT_BRAND := Xiaomi
+PRODUCT_DEVICE := wt88047
+PRODUCT_NAME := kasumi_wt88047
+PRODUCT_MANUFACTURER := Wingtech
+PRODUCT_MODEL := Redmi 2
+
+PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+PRODUCT_BUILD_PROP_OVERRIDES += DEVICE_MAINTAINERS="Saket Sawrav(I-m-mortal)"

@@ -1,5 +1,4 @@
-#
-# Copyright (C) 2017 The MoKee Open Source Project
+# Copyright (C) 2016 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,34 +11,33 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from cheeseburger device
-$(call inherit-product, device/oneplus/cheeseburger/device.mk)
+# Inherit from oneplus2 device
+$(call inherit-product, device/oneplus/oneplus2/device.mk)
 
 # Inherit some common AOSiP stuff.
-$(call inherit-product, vendor/aosip/config/common_full_phone.mk)
+$(call inherit-product, vendor/kasumi/config/common_full_phone.mk)
 
-PRODUCT_NAME := aosip_cheeseburger
-PRODUCT_DEVICE := cheeseburger
+PRODUCT_NAME := kasumi_oneplus2
+PRODUCT_DEVICE := oneplus2
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
-PRODUCT_MODEL := ONEPLUS A5000
 
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 
-TARGET_VENDOR_PRODUCT_NAME := OnePlus5
-TARGET_VENDOR_DEVICE_NAME := OnePlus5
-
-PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=OnePlus5 PRODUCT_NAME=OnePlus5
+TARGET_VENDOR_PRODUCT_NAME := OnePlus2
+TARGET_VENDOR_DEVICE_NAME := OnePlus2
+PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=OnePlus2 PRODUCT_NAME=OnePlus2
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    DEVICE_MAINTAINERS="DreamTeam" \
-    BUILD_FINGERPRINT=OnePlus/OnePlus5/OnePlus5:7.1.1/NMF26X/06241119:user/release-keys
+    BUILD_FINGERPRINT=OnePlus/OnePlus2/OnePlus2:6.0.1/MMB29M/1447840920:user/release-keys \
+    PRIVATE_BUILD_DESC="OnePlus2-user 6.0.1 MMB29M 20 dev-keys" \
+    DEVICE_MAINTAINERS="Brett Montague(gtpitch)"
+
+PRODUCT_SYSTEM_PROPERTY_BLACKLIST += ro.product.model
 
 TARGET_VENDOR := oneplus
-
