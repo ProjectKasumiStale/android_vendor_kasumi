@@ -141,5 +141,13 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     charger_res_images
 
+# Notification sound
+PRODUCT_COPY_FILES += \
+    vendor/kasumi/prebuilt/common/media/audio/notifications/Bushido!.ogg:system/media/audio/notifications/Bushido!.ogg
+
+# Change default notification sound
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.notification_sound=Bushido!.ogg
+
 # include definitions for SDCLANG
 include vendor/kasumi/sdclang/sdclang.mk
