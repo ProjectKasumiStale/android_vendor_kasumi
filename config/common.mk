@@ -56,7 +56,8 @@ PRODUCT_PACKAGES += \
     OTAUpdates \
     Stk \
     ThemeInterfacer \
-    Turbo
+    Turbo \
+    WallpaperPicker
 
 # Extra tools
 PRODUCT_PACKAGES += \
