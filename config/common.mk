@@ -47,7 +47,7 @@ PRODUCT_PACKAGES += \
     BluetoothExt \
     Jelly \
     LatinIME \
-    Launcher3 \
+    TrebuchetPrebuilt \
     LiveWallpapers \
     LiveWallpapersPicker \
     MusicFX \
