@@ -18,4 +18,4 @@
 $(call inherit-product, device/vestel/teos/aosp_teos.mk)
 
 # Some Kasumi configuration :)
-DEVICE_MAINTAINER := "Bedirhan KURT"
+PRODUCT_BUILD_PROP_OVERRIDES += DEVICE_MAINTAINERS="Beru Shinsetsu (Wind/owZ)"
